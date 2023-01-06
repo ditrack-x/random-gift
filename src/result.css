@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:wght@100;200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Pantallas grandes */
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+/* Tabletas  */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Celulares  */
+
+@media (max-width: 450px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    background-color: #de4242 ;
+    color: white;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    /* -ms-transform: translateY(-50%); */
+    transform: translateY(-50%);
+}
+
+.title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.name input{
+    border-radius: 25px;
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3em;
+    background: #D9D9D9;
+    border: 0px;
+    outline: 0px;
+}
+
+.name input:focus{
+    /* outline: 3px solid #ffffff; */
+    box-shadow: 0px 2px 16px 0px rgba(255, 255, 255, 0.3);
+}
+
+.name input[type="submit"]{
+    background-color: #de8b8b;
+    color: white;
+    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.name input[type="submit"]:hover{
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+
+#button{
+    font-size: 1em;
+    font-weight: 600;
+    color: #151515;
+    margin: 1.3em;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+#button:hover{
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" async></script>
+    <title>Random Gifts | Ditrack</title>
+</head>
+<body>
+    <div class="content">
+        <div class="title">Random Gift</div>
+        <div class="name">
+            <input type="text" name="" id="input-text"  placeholder="Ingresar nombres"> 
+        </div>
+        <div class="result-container hide">
+            <div class="text">Te toca darle un regalo a: </div>
+            <div class="result-name">Nombre de ejemplo</div>
+            <div class="text">Shhhh... </div>
+            <div class="text">Dale click en nuevo y pasa al siguiente participante</div>
+        </div>
+        <div class="list-cont show">
+            <div class="titlePart">
+                <span id="titleSpan"> Participantes </span>
+                <div>
+                    <input type="button" value="Edit" id="Edit">
+                </div>
+            </div>
+            <div class="edit-options hide">
+                <input type="button" value="Restart" id="restart">
+                <input type="button" value="Delete" id="delete">
+                <input type="button" value="Change" id="change">
+            </div>
+            <div class="list Flipped">
+                <div class="participants Content">
+                    <ol id="participants-list"></ol>
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <input type="button" value="Empezar" id="button" class="show">
+            <input type="button" value="Nuevo" id="new-button" class="hide">
+            <!-- <a href="/src/result.html" id="button">Empezar</a> -->
+        </div>
+    </div>
+</body>
+</html>
