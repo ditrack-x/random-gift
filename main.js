@@ -1,5 +1,4 @@
 const input = document.getElementById("input-text");
-let participantes = document.getElementById('participants-list')
 const editBtn = document.getElementById("Edit")
 const startBtn = document.getElementById("button") 
 const newBtn = document.getElementById("new-button") 
@@ -10,8 +9,7 @@ const changeBtn = document.getElementById("change")
 const restartBtn = document.getElementById("restart")
 const resultName = document.getElementsByClassName("result-name")[0]
 const divPart = document.getElementsByClassName("participants")[0]
-let secretFriendsArr = []
-let namesCopy = []
+let participantes = document.getElementById('participants-list')
 let names = []
 
 function shuffle(array) {
@@ -39,7 +37,6 @@ function printNames(e){
         // Ingresar nombres en un arrray
         let textInput = input.value
         names.push(textInput)
-        namesCopy.push(textInput)
         console.log(names);
         
         // Limpiar el input.value
@@ -52,6 +49,11 @@ function printNames(e){
     }
 }
 
+/**
+* It is used recomender related products for a specific product
+* @param {String} id - Product ID.
+* @param {Number} limit -List the number of result
+*/
 function showEdit(){
     const editOptions = document.getElementsByClassName("edit-options")[0]
     if(editOptions.classList.contains("hide")){
