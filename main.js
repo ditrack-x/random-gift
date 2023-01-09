@@ -9,8 +9,23 @@ const changeBtn = document.getElementById("change")
 const restartBtn = document.getElementById("restart")
 const resultName = document.getElementsByClassName("result-name")[0]
 const divPart = document.getElementsByClassName("participants")[0]
-let participantes = document.getElementById('participants-list')
+const participantes = document.getElementById('participants-list')
 let names = []
+
+// All the event listeners in the first step of the app
+// The input text function
+input.addEventListener('keyup', printNames)
+// Listeners to the editing list feature
+restartBtn.addEventListener('click', restartList)
+editBtn.addEventListener('click', showEdit)
+deleteBtn.addEventListener("click", deleteEntry)
+changeBtn.addEventListener("click", changeEntry)
+
+// All functions needed for interact with the first part of the app
+function debug(){
+    console.log("click");
+    alert("Click")
+}
 
 function shuffle(array) {
     const newArray = [...array]
@@ -22,38 +37,29 @@ function shuffle(array) {
   
       newArray.push(...randomItem)
     }
-  
+
     return newArray
-}
-
-
-
-function debug(){
-    console.log("click");
 }
 
 function printNames(e){
     if(e.keyCode === 13){
-        // Ingresar nombres en un arrray
+        // Enter names into the main array: names[]
         let textInput = input.value
         names.push(textInput)
         console.log(names);
         
-        // Limpiar el input.value
+        // Clean theinput.value
         input.value = '';
 
         //  ------- Print Names --------
         const li = document.createElement('li')
+        li.setAttribute("class", "item")
         li.textContent = textInput
         participantes.appendChild(li)
     }
 }
 
-/**
-* It is used recomender related products for a specific product
-* @param {String} id - Product ID.
-* @param {Number} limit -List the number of result
-*/
+// Editing list functions
 function showEdit(){
     const editOptions = document.getElementsByClassName("edit-options")[0]
     if(editOptions.classList.contains("hide")){
@@ -63,31 +69,33 @@ function showEdit(){
     }
 }
 
-restartBtn.addEventListener('click', (e) => {
-    names = [];
-    participantes.remove()
-    const ol = document.createElement('ol')
-    ol.setAttribute("id", "participants-list")
-    divPart.appendChild(ol)
-})
+function restartList(e){
+    location.reload()
+}
 
-input.addEventListener('keyup', printNames)
-editBtn.addEventListener('click', showEdit)
-deleteBtn.addEventListener("click", debug)
-changeBtn.addEventListener("click", debug)
+function changeEntry(e){
+    debug()
+}
 
+function deleteEntry(e){
+    debug()
+}
 
 
 // ----------------- Result ------------------ //
+
+
+// Event Listeners
 startBtn.addEventListener("click", randomFriend)
 newBtn.addEventListener("click", newFriend)
 
+
+// Functions
 function randomFriend(e){
 
     document.body.style.backgroundColor = "#e03f34"
     document.body.style.transition = "1s"
     listCont.classList.replace("show", "hide")
-    // resultCont.classList.replace("hide", "show")
     input.placeholder = "¿Quien eres?"
 
     startBtn.classList.replace("show", "hide")
@@ -132,9 +140,8 @@ function displayFriend(){
 }
 
 function error(){
-    alert("Este nombre no se encuentra en la lista")
+    alert(input.value + " not found")
 }
-
 
 function newFriend(e){
     let textInput = input.value
@@ -146,6 +153,6 @@ function newFriend(e){
             input.value = ''
         }
     }else{
-        alert("Este nombre no se encuentra en la lista")
+        error()
     }
 }
