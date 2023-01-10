@@ -10,6 +10,9 @@ const restartBtn = document.getElementById("restart")
 const resultName = document.getElementsByClassName("result-name")[0]
 const divPart = document.getElementsByClassName("participants")[0]
 const participantes = document.getElementById('participants-list')
+const inputIndex = document.getElementById("entry")
+const changeIndex = document.getElementById("change-text")
+const changeFunction = document.getElementsByClassName("change-function")[0]
 let names = []
 
 // All the event listeners in the first step of the app
@@ -26,6 +29,15 @@ function debug(){
     console.log("click");
     alert("Click")
 }
+
+function changeStatus(object){
+    if(object.classList.contains("hide")){
+        object.classList.replace("hide", "show")
+    }else{
+        object.classList.replace("show", "hide")
+    }
+}
+
 
 function shuffle(array) {
     const newArray = [...array]
@@ -62,11 +74,7 @@ function printNames(e){
 // Editing list functions
 function showEdit(){
     const editOptions = document.getElementsByClassName("edit-options")[0]
-    if(editOptions.classList.contains("hide")){
-        editOptions.classList.replace("hide", "show")
-    }else{
-        editOptions.classList.replace("show", "hide")
-    }
+    changeStatus(editOptions)
 }
 
 function restartList(e){
@@ -74,7 +82,7 @@ function restartList(e){
 }
 
 function changeEntry(e){
-    debug()
+    changeStatus(changeFunction)
 }
 
 function deleteEntry(e){

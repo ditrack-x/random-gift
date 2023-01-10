@@ -25,7 +25,7 @@
 
 @media (max-width: 450px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -66,14 +66,15 @@ body{
     background: #D9D9D9;
     border: 0px;
     outline: 0px;
+    max-width: 80vw;
 }
 
-.name input:focus{
+.name > input:focus{
     /* outline: 3px solid #ffffff; */
     box-shadow: 0px 2px 16px 0px rgba(255, 255, 255, 0.3);
 }
 
-.name input[type="submit"]{
+.name > input[type="submit"]{
     background-color: #de8b8b;
     color: white;
     padding: 10px;
@@ -81,7 +82,7 @@ body{
     padding-bottom: 0px;
 }
 
-.name input[type="submit"]:hover{
+.name > input[type="submit"]:hover{
     background-color: transparent;
     border: 2px solid white;
 }
@@ -117,7 +118,10 @@ body{
     background-color: #D9D9D9;
     border-radius: 10px;
     margin-top: 20px;
-    padding: 10px;
+    padding-top: 10px;
+    padding: 1rem;
+    max-width: 70vw;
+    max-height: 70vh;
 }
 
 .list{
@@ -152,38 +156,43 @@ body{
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-#Edit:hover{
+#Edit:active{
     background-color: #d90000;
     cursor: pointer;
 }
 
-#titleSpan,
+#titleSpan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 9vw;
+}
 .titlePart > div{
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-#entry{
+#entry,
+#change-text{
     text-align: center;
     font-weight: 500;
     margin-top: 12px;
     width: 10rem;
 }
 
-#entry::placeholder{
+#entry::placeholder,
+#change-text::placeholder{
     color: #606060
 }
 
 .titlePart{
-    display: flex;
-    justify-content: center;
-    padding-left: 20vw;
-    padding-right: 1vw;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
     color: #151515;
     font-weight: 600;
 }
@@ -219,7 +228,11 @@ body{
     padding-right: 10px;
     margin-left: 20px;
 }
-
+#restart,
+#delete,
+#change{
+    margin-left: 0;
+}
 #restart:hover{
     background-color: green;
 }
@@ -256,3 +269,5 @@ body{
     display: flex;
     transition: 1s;
 }
+
+/* Cambiar el padding de la lista */
