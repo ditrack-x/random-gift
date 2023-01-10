@@ -17,6 +17,7 @@ let names = []
 
 // All the event listeners in the first step of the app
 // The input text function
+
 input.addEventListener('keyup', printNames)
 // Listeners to the editing list feature
 restartBtn.addEventListener('click', restartList)
@@ -27,7 +28,6 @@ changeBtn.addEventListener("click", changeEntry)
 // All functions needed for interact with the first part of the app
 function debug(){
     console.log("click");
-    alert("Click")
 }
 
 function changeStatus(object){
@@ -86,7 +86,14 @@ function changeEntry(e){
 }
 
 function deleteEntry(e){
-    debug()
+    let index = inputIndex.value
+    index -= 1
+    console.log(index);
+
+    names.splice(index,index+1)
+    console.log(names);
+
+    participantes.removeChild(participantes.children[index])
 }
 
 

@@ -158,9 +158,10 @@ body{
     font-weight: 600;
     padding-left: 1rem;
     padding-right: 1rem;
+    cursor: pointer;
 }
 
-#Edit:active{
+#Edit:hover{
     background-color: #d90000;
     cursor: pointer;
 }
