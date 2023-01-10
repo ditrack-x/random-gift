@@ -177,7 +177,7 @@ footer{
 
 #Edit{
     display: flex;
-    align-content: center;
+    align-items: center;
     border-radius: 8px;
     border: 0;
     background-color: #a9a9a9;
@@ -187,6 +187,10 @@ footer{
     padding-left: 1rem;
     padding-right: 1rem;
     cursor: pointer;
+}
+
+.bx-edit{
+    margin-left: 5px;
 }
 
 #Edit:hover{

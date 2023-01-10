@@ -82,7 +82,16 @@ function restartList(e){
 }
 
 function changeEntry(e){
-    changeStatus(changeFunction)
+    let index = inputIndex.value
+    index -= 1
+    let item = changeIndex.value
+
+    // The array modding
+    names[index] = item
+    // Modding the HTML
+    participantes.children[index].textContent = item
+    changeIndex.value = ''
+    inputIndex.value = ''
 }
 
 function deleteEntry(e){
