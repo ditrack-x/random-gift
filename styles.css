@@ -30,13 +30,41 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #288743 ;
+    color: white;
+}
+
+nav{
+    margin: 2rem 1.5rem 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.bx-menu{
+    font-size: 3rem;
+    cursor: pointer;
+}
+.bx-arrow-back{
+    cursor: pointer;
+}
+
+main{
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #288743 ;
-    color: white;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content{
@@ -227,7 +255,6 @@ body{
     font-weight: 500;
     padding-left: 10px;
     padding-right: 10px;
-    margin-left: 20px;
 }
 #restart,
 #delete,
@@ -271,4 +298,14 @@ body{
     transition: 1s;
 }
 
-/* Cambiar el padding de la lista */
+#github{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.bxl-github{
+    font-size: 1.5rem;
+}

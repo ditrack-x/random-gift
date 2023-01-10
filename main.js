@@ -88,12 +88,9 @@ function changeEntry(e){
 function deleteEntry(e){
     let index = inputIndex.value
     index -= 1
-    console.log(index);
-
     names.splice(index,index+1)
-    console.log(names);
-
     participantes.removeChild(participantes.children[index])
+    inputIndex.value = ''
 }
 
 
