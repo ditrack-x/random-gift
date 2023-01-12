@@ -10,61 +10,72 @@
     <title>Random Gifts | Ditrack</title>
 </head>
 <body>
-    <nav>
-        <div class="back"><i class='bx bx-arrow-back' ></i></div>
-        <div class="menu"><i class='bx bx-menu'></i></div>
-    </nav>
-    <main>
-        <div class="title">Random Gift</div>
-        <div class="name">
-            <input type="text" name="" id="input-text"  placeholder="Ingresar nombres"> 
-        </div>
-        <div class="result-container hide">
-            <div class="text">Te toca darle un regalo a: </div>
-            <div class="result-name">Nombre de ejemplo</div>
-            <div class="text">Shhhh... </div>
-            <div class="text">Dale click en nuevo y pasa al siguiente participante</div>
-        </div>
-        <div class="list-cont show">
-            <div class="titlePart">
-                <span id="titleSpan"> Participantes </span>
-                <div>
-                    <button type="submit" id="Edit">
-                        <span>Edit</span>
-                        <i class='bx bx-edit' ></i>
-                    </button>
-                </div>
+    <div class="app">
+        <aside class="sidebar hide">
+            <div class="title-side">Menu</div>
+            <div id="menu">
+                <a href="#" class="menu-item">Home</a>
+                <a href="#" class="menu-item">Link generator</a>
+                <a href="#" class="menu-item">Mode</a>
+                <a href="#" class="menu-item">About</a>
             </div>
-            <div class="edit-options hide">
-                <div class="edit-buttons">
-                    <input type="button" value="Restart" id="restart">
-                    <input type="button" value="Delete" id="delete">
-                    <input type="button" value="Change" id="change">
+        </aside>
+        <main>
+            <div class="title">Random Gift</div>
+            <div class="name">
+                <input type="text" name="" id="input-text"  placeholder="Ingresar nombres"> 
+            </div>
+            <div class="result-container hide">
+                <div class="text">Te toca darle un regalo a: </div>
+                <div class="result-name">Nombre de ejemplo</div>
+                <div class="text">Shhhh... </div>
+                <div class="text">Dale click en nuevo y pasa al siguiente participante</div>
+            </div>
+            <div class="list-cont show">
+                <div class="titlePart">
+                    <span id="titleSpan"> Participantes </span>
+                    <div>
+                        <button type="submit" id="Edit">
+                            <span>Edit</span>
+                            <i class='bx bx-edit' ></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="name">
-                    <input type="text" class="show" name="" id="entry"  placeholder="Type the index"> 
-                    <div class="change-function">
-                        <input type="text" name="" id="change-text"  placeholder="Enter the new name">
+                <div class="edit-options hide">
+                    <div class="edit-buttons">
+                        <input type="button" value="Restart" id="restart">
+                        <input type="button" value="Delete" id="delete">
+                        <input type="button" value="Change" id="change">
+                    </div>
+                    <div class="name">
+                        <input type="text" class="show" name="" id="entry"  placeholder="Type the index"> 
+                        <div class="change-function">
+                            <input type="text" name="" id="change-text"  placeholder="Enter the new name">
+                        </div>
+                    </div>
+                </div>
+                <div class="list Flipped">
+                    <div class="participants Content">
+                        <ol id="participants-list"></ol>
                     </div>
                 </div>
             </div>
-            <div class="list Flipped">
-                <div class="participants Content">
-                    <ol id="participants-list"></ol>
-                </div>
+            <div class="button">
+                <input type="button" value="Empezar" id="button" class="show">
+                <input type="button" value="Nuevo" id="new-button" class="hide">
             </div>
-        </div>
-        <div class="button">
-            <input type="button" value="Empezar" id="button" class="show">
-            <input type="button" value="Nuevo" id="new-button" class="hide">
-        </div>
-    </main>
+        </main>
+    </div>
+    <nav>
+        <div id="back"><i class='bx bx-arrow-back'></i></div>
+        <div id="menu-button"><i class='bx bx-menu'></i></div>
+    </nav>
 <footer>
     <div>v1.1.0</div>
     <div id="github">
         <a href="https://github.com/ditrack-x" target="_blank" id="github">
             <i class='bx bxl-github' ></i>
-            <span> ditrack</span>
+            <span>ditrack</span>
         </a>
     </div>
 </footer>

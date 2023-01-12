@@ -13,17 +13,16 @@ const participantes = document.getElementById('participants-list')
 const inputIndex = document.getElementById("entry")
 const changeIndex = document.getElementById("change-text")
 const changeFunction = document.getElementsByClassName("change-function")[0]
+const backArrow = document.getElementById("back")
+const menu = document.getElementById("menu-button")
+const sideBar = document.getElementsByClassName("sidebar")[0]
+const menuItem = document.getElementsByClassName("menu-item")
 let names = []
 
-// All the event listeners in the first step of the app
-// The input text function
+// ---------------- Listing ------------------ //
 
+// The input text function
 input.addEventListener('keyup', printNames)
-// Listeners to the editing list feature
-restartBtn.addEventListener('click', restartList)
-editBtn.addEventListener('click', showEdit)
-deleteBtn.addEventListener("click", deleteEntry)
-changeBtn.addEventListener("click", changeEntry)
 
 // All functions needed for interact with the first part of the app
 function debug(){
@@ -42,14 +41,14 @@ function changeStatus(object){
 function shuffle(array) {
     const newArray = [...array]
     const length = newArray.length
-  
+    
     for (let start = 0; start < length; start++) {
-      const randomPosition = Math.floor((newArray.length - start) * Math.random())
-      const randomItem = newArray.splice(randomPosition, 1)
-  
-      newArray.push(...randomItem)
+        const randomPosition = Math.floor((newArray.length - start) * Math.random())
+        const randomItem = newArray.splice(randomPosition, 1)
+        
+        newArray.push(...randomItem)
     }
-
+    
     return newArray
 }
 
@@ -62,7 +61,7 @@ function printNames(e){
         
         // Clean theinput.value
         input.value = '';
-
+        
         //  ------- Print Names --------
         const li = document.createElement('li')
         li.setAttribute("class", "item")
@@ -70,6 +69,14 @@ function printNames(e){
         participantes.appendChild(li)
     }
 }
+
+// ---------------- Edit ------------------ //
+
+// Listeners to the editing list feature
+restartBtn.addEventListener('click', restartList)
+editBtn.addEventListener('click', showEdit)
+deleteBtn.addEventListener("click", deleteEntry)
+changeBtn.addEventListener("click", changeEntry)
 
 // Editing list functions
 function showEdit(){
@@ -100,6 +107,16 @@ function deleteEntry(e){
     names.splice(index,index+1)
     participantes.removeChild(participantes.children[index])
     inputIndex.value = ''
+}
+
+// ---------------- Side bar ------------------ //
+
+menu.addEventListener("click", showSideBar)
+backArrow.addEventListener("click", debug)
+menuItem[0].addEventListener("click", debug)
+
+function showSideBar(e){
+    changeStatus(sideBar)
 }
 
 

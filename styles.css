@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:wght@100;200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+:root{
+    --main-color: #288743;
+}
+
 *{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -30,17 +34,58 @@
 }
 
 body{
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #288743 ;
+    align-items: center;
+    background-color: var(--main-color);
     color: white;
 }
 
+.app{
+    position: relative;
+}
+
+aside{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #151515;
+}
+
+.title-side{
+    margin-top: 2rem;
+    font-weight: 600;
+    font-size: 2em;
+    padding-left: 48px;
+}
+
+.menu-item{
+    text-decoration: none;
+    color: white;
+    border-right: 4px solid inherit;
+    font-size: 1.3rem;
+    padding: 24px;
+}
+
+.menu-item:hover{
+    border-right: 8px solid var(--main-color);
+    color: #FFFFFF;
+    background: #232323;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+
 nav{
+    position: fixed;
     margin: 2rem 1.5rem 0 1.5rem;
+    top: 0;
     display: flex;
     justify-content: space-between;
+    min-width: 90vw;
     align-items: center;
     font-size: 2rem;
 }
@@ -53,8 +98,21 @@ nav{
     cursor: pointer;
 }
 
+#menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.bx-menu:active,
+.bx-arrow-back:hover{
+    color: #D9D9D9;
+}
+
+
+
 main{
-    margin: 0;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,13 +142,13 @@ footer{
     font-weight: 600;
     font-size: 3em;
 }
-
+#input-text::placeholder{
+    text-align: center;
+}
 .name input{
     border-radius: 25px;
     font-size: 1.2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 3em;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     background: #D9D9D9;
     border: 0px;
     outline: 0px;
@@ -98,7 +156,6 @@ footer{
 }
 
 .name > input:focus{
-    /* outline: 3px solid #ffffff; */
     box-shadow: 0px 2px 16px 0px rgba(255, 255, 255, 0.3);
 }
 
@@ -313,4 +370,4 @@ footer{
 .bxl-github{
     font-size: 1.5rem;
 }
-/* . */
+
