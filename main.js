@@ -17,6 +17,8 @@ const backArrow = document.getElementById("back")
 const menu = document.getElementById("menu-button")
 const sideBar = document.getElementsByClassName("sidebar")[0]
 const menuItem = document.getElementsByClassName("menu-item")
+const root = document.querySelector(':root');
+
 let names = []
 
 // ---------------- Listing ------------------ //
@@ -112,11 +114,28 @@ function deleteEntry(e){
 // ---------------- Side bar ------------------ //
 
 menu.addEventListener("click", showSideBar)
-backArrow.addEventListener("click", debug)
-menuItem[0].addEventListener("click", debug)
+backArrow.addEventListener("click", back)
+menuItem[0].addEventListener("click", back)
+menuItem[1].addEventListener("click", randomFriend)
 
 function showSideBar(e){
     changeStatus(sideBar)
+}
+
+function back(){
+    root.style.setProperty('--main-color','#288743')
+    listCont.classList.replace("hide", "show")
+    startBtn.classList.replace("hide", "show")
+    newBtn.classList.replace("show", "hide")
+    resultCont.classList.replace("show","hide")
+    sideBar.classList.replace("show","hide")
+    input.placeholder = "Enter names"
+    input.value = ''
+
+
+
+    input.removeEventListener("keyup", showName)
+    input.addEventListener('keyup', printNames)
 }
 
 
@@ -130,11 +149,9 @@ newBtn.addEventListener("click", newFriend)
 
 // Functions
 function randomFriend(e){
-
-    document.body.style.backgroundColor = "#e03f34"
-    document.body.style.transition = "1s"
+    root.style.setProperty('--main-color','red')
     listCont.classList.replace("show", "hide")
-    input.placeholder = "¿Quien eres?"
+    input.placeholder = "Who are you?"
 
     startBtn.classList.replace("show", "hide")
     newBtn.classList.replace("hide", "show")

@@ -41,6 +41,7 @@ body{
     align-items: center;
     background-color: var(--main-color);
     color: white;
+    transition: 1s;
 }
 
 .app{
