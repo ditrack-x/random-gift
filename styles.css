@@ -142,9 +142,17 @@ footer{
     font-weight: 600;
     font-size: 3em;
 }
+#input-text{
+    text-align: center;
+}
 #input-text::placeholder{
     text-align: center;
 }
+
+.text{
+    text-align: center;
+}
+
 .name input{
     border-radius: 25px;
     font-size: 1.2rem;
