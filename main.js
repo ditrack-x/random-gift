@@ -18,17 +18,22 @@ const menu = document.getElementById("menu-button")
 const sideBar = document.getElementsByClassName("sidebar")[0]
 const menuItem = document.getElementsByClassName("menu-item")
 const root = document.querySelector(':root');
+const version = document.querySelectorAll(".version")
 
 let names = []
 
-// ---------------- Listing ------------------ //
+version.forEach(box =>{
+    box.textContent = "1.1.0"
+})
 
-// The input text function
-input.addEventListener('keyup', printNames)
+// ---------------- Utility functions ------------------ //
 
-// All functions needed for interact with the first part of the app
 function debug(){
     console.log("click");
+}
+
+function underDev(){
+    alert("This function is under development")
 }
 
 function changeStatus(object){
@@ -38,7 +43,6 @@ function changeStatus(object){
         object.classList.replace("show", "hide")
     }
 }
-
 
 function shuffle(array) {
     const newArray = [...array]
@@ -54,6 +58,12 @@ function shuffle(array) {
     return newArray
 }
 
+// ---------------- Listing ------------------ //
+
+// The input text function
+input.addEventListener('keyup', printNames)
+
+// All functions needed for interact with the first part of the app
 function printNames(e){
     if(e.keyCode === 13){
         // Enter names into the main array: names[]
@@ -117,6 +127,9 @@ menu.addEventListener("click", showSideBar)
 backArrow.addEventListener("click", back)
 menuItem[0].addEventListener("click", back)
 menuItem[1].addEventListener("click", result)
+menuItem[2].addEventListener("click", underDev)
+menuItem[3].addEventListener("click", underDev)
+menuItem[4].addEventListener("click", underDev)
 
 function showSideBar(e){
     changeStatus(sideBar)
@@ -165,7 +178,7 @@ newBtn.addEventListener("click", newFriend)
 
 // Functions
 function randomFriend(e){
-    root.style.setProperty('--main-color','red')
+    root.style.setProperty('--main-color','#e03838')
     listCont.classList.replace("show", "hide")
     input.placeholder = "Who are you?"
 
