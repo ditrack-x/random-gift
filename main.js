@@ -116,7 +116,7 @@ function deleteEntry(e){
 menu.addEventListener("click", showSideBar)
 backArrow.addEventListener("click", back)
 menuItem[0].addEventListener("click", back)
-menuItem[1].addEventListener("click", randomFriend)
+menuItem[1].addEventListener("click", result)
 
 function showSideBar(e){
     changeStatus(sideBar)
@@ -136,6 +136,22 @@ function back(){
 
     input.removeEventListener("keyup", showName)
     input.addEventListener('keyup', printNames)
+}
+
+function result(){
+    if(names.length != 0){
+        root.style.setProperty('--main-color','red')
+        listCont.classList.replace("show", "hide")
+        input.placeholder = "Who are you?"
+
+        startBtn.classList.replace("show", "hide")
+        newBtn.classList.replace("hide", "show")
+
+        input.removeEventListener("keyup", printNames)
+        input.addEventListener('keyup', showName)
+    }else{
+        alert("The app is not started")
+    }
 }
 
 
