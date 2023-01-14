@@ -182,6 +182,11 @@ footer{
     background-color: transparent;
     border: 2px solid white;
 }
+
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
 .button{
     margin: 24px;
 }
@@ -367,7 +372,6 @@ footer{
 
 .show{
     display: flex;
-    transition: 1s;
 }
 
 #github{

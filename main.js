@@ -20,6 +20,7 @@ const menuItem = document.getElementsByClassName("menu-item")
 const root = document.querySelector(':root');
 const version = document.querySelectorAll(".version")
 
+
 let names = []
 
 version.forEach(box =>{
@@ -104,21 +105,28 @@ function changeEntry(e){
     let index = inputIndex.value
     index -= 1
     let item = changeIndex.value
-
-    // The array modding
-    names[index] = item
-    // Modding the HTML
-    participantes.children[index].textContent = item
-    changeIndex.value = ''
-    inputIndex.value = ''
+    if(names[index] !== undefined){
+        // The array modding
+        names[index] = item
+        // Modding the HTML
+        participantes.children[index].textContent = item
+        changeIndex.value = ''
+        inputIndex.value = ''
+    }else{
+        alert("The index do not exists in the list")
+    }
 }
 
 function deleteEntry(e){
     let index = inputIndex.value
     index -= 1
-    names.splice(index,index+1)
-    participantes.removeChild(participantes.children[index])
-    inputIndex.value = ''
+    if(names[index] !== undefined){
+        names.splice(index,index+1)
+        participantes.removeChild(participantes.children[index])
+        inputIndex.value = ''
+    }else{
+        alert("The index do not exists in the list")
+    }
 }
 
 // ---------------- Side bar ------------------ //
