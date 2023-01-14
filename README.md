@@ -1,5 +1,5 @@
 # Random Gift
-Random Gift es una aplicación web que permite a las personas (temporalmente) localmente hacer una lista de personas y crear donantes y obsequiadores.
+Random Gift is a web application that allows people to (temporarily) locally list people and create donors and gift givers. Like the secret santa method
 
 ### How to use
 1. The first step is Enter de names of all participants
