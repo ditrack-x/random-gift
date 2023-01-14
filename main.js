@@ -147,11 +147,11 @@ function deleteEntry(e){
 
 menu.addEventListener("click", showSideBar)
 backArrow.addEventListener("click", back)
-menuItem[0].addEventListener("click", back)
-menuItem[1].addEventListener("click", result)
-menuItem[2].addEventListener("click", underDev)
-menuItem[3].addEventListener("click", underDev)
-menuItem[4].addEventListener("click", underDev)
+menuItem[0].addEventListener("click", back) // Home
+menuItem[1].addEventListener("click", result) // Result
+menuItem[2].addEventListener("click", underDev) // Link
+menuItem[3].addEventListener("click", underDev) // Mode
+menuItem[4].addEventListener("click", underDev) // About
 
 
 function showSideBar(e){
@@ -179,9 +179,10 @@ function result(){
         root.style.setProperty('--main-color','red')
         listCont.classList.replace("show", "hide")
         input.placeholder = "Who are you?"
-
+        
         startBtn.classList.replace("show", "hide")
         newBtn.classList.replace("hide", "show")
+        sideBar.classList.replace("show","hide")
 
         input.removeEventListener("keyup", printNames)
         input.addEventListener('keyup', showName)
