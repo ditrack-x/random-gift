@@ -20,7 +20,6 @@ const menuItem = document.getElementsByClassName("menu-item")
 const root = document.querySelector(':root');
 const version = document.querySelectorAll(".version")
 
-
 let names = []
 
 version.forEach(box =>{
@@ -65,11 +64,18 @@ function shuffle(array) {
 input.addEventListener('keyup', printNames)
 
 // All functions needed for interact with the first part of the app
+input.onkeypress = function(e) {
+    var chr = String.fromCharCode(e.which);
+    if ("></\"\'.,;[]{}!@#$%^&*()¿¡²³¤¤€¼½¾‘’¥×«»¶´ç¿:?\\".indexOf(chr) >= 0)
+        return false;
+};
+
 function printNames(e){
     if(e.keyCode === 13){
         // Enter names into the main array: names[]
-        let textInput = input.value
-        names.push(textInput)
+        let textInput = input.value, aux
+        aux = textInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        names.push(aux.toUpperCase())
         console.log(names);
         
         // Clean theinput.value
@@ -101,13 +107,21 @@ function restartList(e){
     location.reload()
 }
 
+changeIndex.onkeypress = function(e) {
+    var chr = String.fromCharCode(e.which);
+    if ("></\"\'.,;[]{}!@#$%^&*()¿¡²³¤¤€¼½¾‘’¥×«»¶´ç¿\\:?".indexOf(chr) >= 0)
+        return false;
+};
+
+
 function changeEntry(e){
     let index = inputIndex.value
     index -= 1
     let item = changeIndex.value
     if(names[index] !== undefined){
         // The array modding
-        names[index] = item
+        let aux = item.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        names[index] = item.toUpperCase()
         // Modding the HTML
         participantes.children[index].textContent = item
         changeIndex.value = ''
@@ -138,6 +152,7 @@ menuItem[1].addEventListener("click", result)
 menuItem[2].addEventListener("click", underDev)
 menuItem[3].addEventListener("click", underDev)
 menuItem[4].addEventListener("click", underDev)
+
 
 function showSideBar(e){
     changeStatus(sideBar)
@@ -220,12 +235,13 @@ function createSantas(e){
 
 function displayFriend(){
     let textInput = input.value
-    let index
+    let index, aux
+    aux = textInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     for(let i = 0; i<matches.length; i++){
-        if(matches[i].santa == textInput){
+        if(matches[i].santa == aux.toUpperCase()){
             index = i;
             console.log(index);
-            resultName.textContent  = matches[i].receiver
+            resultName.textContent  = matches[i].receiver[0] + matches[i].receiver.substring(1).toLowerCase()
         }
     }
 
@@ -236,8 +252,9 @@ function error(){
 }
 
 function newFriend(e){
-    let textInput = input.value
-    if(names.includes(textInput)){
+    let textInput = input.value, aux
+    aux = textInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    if(names.includes(aux.toUpperCase())){
         if(resultCont.classList.contains("hide")){
             resultCont.classList.replace("hide","show")
         }else{
